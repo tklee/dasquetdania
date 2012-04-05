@@ -1,47 +1,27 @@
 var http = require('http');
-var fs = require('fs');
+var url = require('url');
+var cp = require('child_process');
 
-
-function onRequest(req, res) { 
-  var pathname = url.parse(req.url).pathname;
-  //console.log("new connection");
-  if (pathname = '/home') {
-    
-    fs.readFile(__dirname + '/files/index.html', function(err, data){
-      res.writeHead(200, {'Content-Type':'text/html'});
-      res.write(data);
-      res.end();
-  
-    });
+function onRequest(request, response) {
+  var pathname = url.parse(request.url).pathname;
+  if(  pathname = '/wait') {
+    cp.exec('node block.js', myCallback);
+  }
+  else{
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+    response.write('Hello!\n');
+    response.end();
   }
 
-//  if (pathname = '/createaccount') {
-//    fs.readFile(__dirname + '/files/createaccount.html', function(err, data) { 
-//      res.writeHead(200, {'Content-Type':'text/html'});
-//      res.write(data);
-//      res.end();
-//
-//    });
-//  }
-//  if (pathname = '/user' /*regexStringsNumbers*/) {
-//    fs.readFile(__dirname + '/files/user1.html', function(err, data) { 
-//      res.writeHead(200, {'Content-Type':'text/html'});
-//      res.write(data);
-//      res.end();
-//    });
+  console.log('new connection');
+
+  function myCallback() {
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+    response.write('thanks for waiting!\n');
+    response.end();
+  }
 }
 
 
-server = http.createServer(onRequest); 
-//  fs.readFile(__dirname + '/files/index.html', function(err, data){
-//    res.writeHead(200, {'Content-Type':'text/html'});
-//    res.write(data);
-//    res.end();
-//
-//
-//  });
-
-
-server.listen(process.env['app_port'] || 3000);
-
-//console.log('server started');
+http.createServer(onRequest).listen(process.env['app_port'] || 3000);
+console.log('server started');
