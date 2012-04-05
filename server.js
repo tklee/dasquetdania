@@ -10,7 +10,7 @@ function onRequest(req, res) {
   console.log('this coming should be the pathname --->');
   console.log(pathname);
   console.log('.......this is the end of block.........');  
-  if (pathname = '/home') {
+  if (pathname == '/home') {
     console.log('***************' + pathname + '  should equal /home'); 
     fs.readFile(__dirname + '/files/user1.html', function(err, data){
       res.writeHead(200, {'Content-Type':'text/html'});
