@@ -11,7 +11,7 @@ function onRequest(req, res) {
   console.log(pathname);
   console.log('.......this is the end of block.........');  
   if (pathname = '/home') {
-    
+    console.log('***************' + pathname + '  should equal /home'); 
     fs.readFile(__dirname + '/files/user1.html', function(err, data){
       res.writeHead(200, {'Content-Type':'text/html'});
       res.write(data);
@@ -22,6 +22,7 @@ function onRequest(req, res) {
   }
   else{
     
+    console.log('***************' + pathname + '  should not equal /home'); 
     fs.readFile(__dirname + '/files/createaccount.html', function(err, data){
       res.writeHead(200, {'Content-Type':'text/html'});
       res.write(data);
