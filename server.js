@@ -44,4 +44,4 @@ server = http.createServer(onRequest);
 
 server.listen(process.env['app_port'] || 3000);
 
-console.log('server started');
+//console.log('server started');
