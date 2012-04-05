@@ -45,6 +45,7 @@ function onRequest(req, res) {
       res.write(data);
       res.end();
     });
+  }
 }
 
 
