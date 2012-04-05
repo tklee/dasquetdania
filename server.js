@@ -9,7 +9,7 @@ function onRequest(req, res) {
   //console.log("new connection");
   if (pathname = '/home') {
     
-    fs.readFile(__dirname + '/files/index.html', function(err, data){
+    fs.readFile(__dirname + '/files/user1.html', function(err, data){
       res.writeHead(200, {'Content-Type':'text/html'});
       res.write(data);
       res.end();
