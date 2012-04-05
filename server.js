@@ -7,8 +7,9 @@ var url = require('url');
 function onRequest(req, res) { 
   var pathname = url.parse(req.url).pathname;
   //console.log("new connection");
-
+  console.log('this coming should be the pathname --->');
   console.log(pathname);
+  console.log('.......this is the end of block.........');  
   if (pathname = '/home') {
     
     fs.readFile(__dirname + '/files/user1.html', function(err, data){
