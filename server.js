@@ -1,6 +1,6 @@
 var http = require('http');
 var fs = require('fs');
-var cp = requre('child_process');
+var cp = require('child_process');
 
 function onRequest(req, res) { 
   var pathname = url.parse(req.url).pathname;
