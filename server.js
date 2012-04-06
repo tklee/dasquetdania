@@ -47,6 +47,13 @@ function onRequest(req, res) {
     });
   }
 
+  if (pathname == '/bbtest' /*regexStringsNumbers*/) {
+    fs.readFile(__dirname + '/files/bbtest.html', function(err, data) { 
+      res.writeHead(200, {'Content-Type':'text/html'});
+      res.write(data);
+      res.end();
+    });
+  }
   else{
 
     fs.readFile(__dirname + '/files/notfound.html', function(err, data) { 
