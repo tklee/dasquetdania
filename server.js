@@ -34,8 +34,8 @@ app.configure('production', function(){
 
 
 var testname = "testingname";
-app.get('/username', function(req, res){
-  res.render('username', {
+app.get('/usernames', function(req, res){
+  res.render('usernames', {
     username: testingname
   });
 });
