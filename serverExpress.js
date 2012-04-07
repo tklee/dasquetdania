@@ -30,7 +30,52 @@ function onRequest(req, res) {
 //  
 //    });
 //  }
-  var tempname = "user1";
+
+
+var exp = require('express');
+
+app = module.exports = express.createServer();
+
+var db = require('db');
+//might have to do
+//var db = require('/files/db') depending on nodester
+
+
+
+
+
+app.configure(function(){
+  app.set('views', __dirname + '/files/views');
+  app.set('view engine', 'jade');
+  app.use(express.bodyParser());
+  app.use(express.methodOverride());
+  app.use(require('stylus').middleware({ src: __dirname + '/public' }));
+  app.use(app.router);
+  app.use(express.static(__dirname + '/public'));
+});
+
+app.configure('development', function(){
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+});
+
+app.configure('production', function(){
+  app.use(express.errorHandler()); 
+});
+
+// Routes
+
+
+
+app.get('/username', function(req, res){
+  res.render('/files/views/username', {
+    username: db.username
+  });
+});
+
+
+
+
+  var username = "user1";
   if (pathname == '/createaccount') {
     fs.readFile(__dirname + '/files/createaccount.html', function(err, data) { 
       res.writeHead(200, {'Content-Type':'text/html'});
@@ -39,8 +84,10 @@ function onRequest(req, res) {
 
     });
   }
-  if (pathname == '/testing' /*regexStringsNumbers*/) {
-      res.render('username',{ name: tempname, username: tempname); 
+  if (pathname == '/' + username /*regexStringsNumbers*/) {
+    fs.readFile(__dirname + '/files/' + username + '.html', function(err, data) { 
+      res.writeHead(200, {'Content-Type':'text/html'});
+      res.write(data);
       res.end();
     });
   }
