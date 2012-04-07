@@ -42,7 +42,7 @@ app.get('/usernames', function(req, res){
 
 
 
-
-app.listen(process.env['app_port'] || 3000);
-
+if (!module.parent) {
+  app.listen(process.env['app_port'] || 3000);
+}
 //console.log('server started');
