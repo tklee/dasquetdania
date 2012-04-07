@@ -30,7 +30,7 @@ function onRequest(req, res) {
 //  
 //    });
 //  }
-
+  var username = "user1";
   if (pathname == '/createaccount') {
     fs.readFile(__dirname + '/files/createaccount.html', function(err, data) { 
       res.writeHead(200, {'Content-Type':'text/html'});
@@ -39,8 +39,8 @@ function onRequest(req, res) {
 
     });
   }
-  if (pathname == '/user' /*regexStringsNumbers*/) {
-    fs.readFile(__dirname + '/files/user1.html', function(err, data) { 
+  if (pathname == '/' + username /*regexStringsNumbers*/) {
+    fs.readFile(__dirname + '/files/' + username + '.html', function(err, data) { 
       res.writeHead(200, {'Content-Type':'text/html'});
       res.write(data);
       res.end();
