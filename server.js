@@ -33,7 +33,7 @@ app.configure('production', function(){
 // Routes
 
 
-var testname = testingname
+var testname = "testingname";
 app.get('/username', function(req, res){
   res.render('/files/views/username', {
     username: testingname
