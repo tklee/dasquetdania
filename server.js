@@ -42,7 +42,7 @@ function onRequest(req, res) {
   if (pathname == '/testing' /*regexStringsNumbers*/) {
       res.render('username',{ name: tempname, username: tempname); 
       res.end();
-    });
+    };
   }
 
   if (pathname == '/bbtest' /*regexStringsNumbers*/) {
