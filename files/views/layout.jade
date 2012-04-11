@@ -1,0 +1,58 @@
+!!! 5
+html
+  head
+    style(type='text/css')
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        }
+
+    link(type='text/css', rel='stylesheet', href='../../bootstrap/css/bootstrap.css')
+    link(type='text/css', rel='stylesheet', href='../../bootstrap/css/bootstrap-responsive.css')
+    script(src='../../bootstrap/js/jquery.js')
+    script(src='../../bootstrap/js/bootstrap-transition.js')
+    script(src='../../bootstrap/js/bootstrap-alert.js')
+    script(src='../../bootstrap/js/bootstrap-modal.js')
+    script(src='../../bootstrap/js/bootstrap-dropdown.js')
+    script(src='../../bootstrap/js/bootstrap-scrollspy.js')
+    script(src='../../bootstrap/js/bootstrap-tab.js')
+    script(src='../../bootstrap/js/bootstrap-tooltip.js')
+    script(src='../../bootstrap/js/bootstrap-popover.js')
+    script(src='../../bootstrap/js/bootstrap-button.js')
+    script(src='../../bootstrap/js/bootstrap-collapse.js')
+    script(src='../../bootstrap/js/bootstrap-carousel.js')
+    script(src='../../bootstrap/js/bootstrap-typeahead.js')
+ 
+
+    title= username 
+
+
+
+  body
+    header
+    section#wrapper!= body
+        footer 
+          section.css-table
+            section.four-column
+              section.cell
+                p Made by <br />Theodore Lee<br />
+
+    .navbar.navbar-fixed-top
+    .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='#') Project name
+          .nav-collapse
+            ul.nav
+              li.active
+                a(href='#') Home
+              li
+                a(href='#about') About
+              li
+                a(href='#contact') Contact
+    .container
+
+

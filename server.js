@@ -31,18 +31,49 @@ app.configure('development', function(){
 //});
 
 // Routes
+var db = require('./db');
 
+var tempholder = db.getCustom('user1');
 
-var testname = "testingname";
-app.get('/usernames', function(req, res){
-  res.render('usernames', {
-    username: testingname
+//var tempholder = db.fooname;
+console.log(tempholder);
+var testname = tempholder;
+var accnumber = '82';
+var testclanname = 'Wing Covenant';
+
+//app.get('/usernames', function(req, res){
+//  res.render('usernames', {
+//    title: 'testname' 
+//  });
+//  //res.render('usernames');
+//});
+
+app.get('/' + testname, function(req, res){
+  res.render('about', {
+    username: testname,
+    accountnumber: accnumber,
+    clanname: testclanname
   });
 });
 
+//app.get('/friends.js', function(req, res){
+//  fs.readFile(__dirname + 'friends.js', function(err, data) {
+//    res.writeHead(200, {'Content-Type':'text/html'});
+//    res.write(data);
+//    res.end(); 
+//
+//
+//
+//  });
+//  res.render('about', {
+//    username: testname,
+//    accountnumber: accnumber,
+//    clanname: testclanname
+//  });
+//});
 
-
-if (!module.parent) {
-  app.listen(process.env['app_port'] || 3000);
-}
+app.listen(8080);
+//if (!module.parent) {
+//  app.listen(process.env['app_port'] || 3000);
+//}
 //console.log('server started');
