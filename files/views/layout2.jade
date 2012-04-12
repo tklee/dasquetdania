@@ -1,0 +1,58 @@
+!!! 5
+html
+  head
+    style(type='text/css')
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        }
+
+    link(type='text/css', rel='stylesheet', href='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/css/bootstrap.css')
+    link(type='text/css', rel='stylesheet', href='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/css/bootstrap-responsive.css')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/jquery.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-transition.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-alert.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-modal.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-dropdown.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-scrollspy.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-tab.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-tooltip.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-popover.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-button.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-collapse.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-carousel.js')
+    script(src='https://raw.github.com/tklee/dasquetdania/master/bootstrap/docs/assets/js/bootstrap-typeahead.js')
+ 
+
+    title= username 
+
+
+
+  body
+    header
+    section#wrapper!= body
+        footer 
+          section.css-table
+            section.four-column
+              section.cell
+                p Made by <br />Theodore Lee<br />
+
+    .navbar.navbar-fixed-top
+    .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='#') Project name
+          .nav-collapse
+            ul.nav
+              li.active
+                a(href='#') Home
+              li
+                a(href='#about') About
+              li
+                a(href='#contact') Contact
+    .container
+
+

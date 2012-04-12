@@ -40,6 +40,8 @@ app.configure('development', function(){
 
 // Routes
 var db = require('./db');
+var bone = require('./backbonemodels');
+var countvar = bone.tempvar2;
 
 var tempholder = db.getCustom('user1');
 
@@ -60,7 +62,8 @@ app.get('/' + testname, function(req, res){
   res.render('about', {
     username: testname,
     accountnumber: accnumber,
-    clanname: testclanname
+    clanname: testclanname,
+    tempvar2: countvar
   });
 });
 
