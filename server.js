@@ -3,7 +3,15 @@ var fs = require('fs');
 //var cp = require('child_process');
 var url = require('url');
 var express = require('express');
+var bc = require('bitcoin');
+var everyone = require('now');
 
+var difftemp = 0;
+
+bc.getDiffTest = function() {
+  difftemp = bc.getDifficulty();
+
+}
 
 app = module.exports = express.createServer();
 

@@ -6,9 +6,22 @@ html
     script(src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.4/underscore-min.js")
     script(src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js")
     script(src="https://raw.github.com/tklee/tmpfiles/master/backbonemodels.js")
-    style(type='text/css')
   
-  
+    script
+      $(document).ready(function(){
+        client.diffvar = client.getDifficulty();
+
+        client.postLastDiff = function(){
+          $("<div></div>".text(diffvar).appendTo("#diffpost");
+        }
+        
+        $("#diff-button").click(function(){
+          client.postLastDiff()
+        }
+
+      }
+
+
   body
 
     .navbar.navbar-fixed-top
